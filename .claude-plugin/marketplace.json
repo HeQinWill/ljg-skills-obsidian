@@ -28,7 +28,7 @@
       "name": "ljg-skills",
       "description": "LJG's personal Claude Code skills collection",
       "version": "1.0.0",
-      "source": "https://github.com/MatthewYe/ljg-skills"
+      "source": "./"
     }
   ]
 }
