@@ -62,11 +62,28 @@ curl -L -o ~/Downloads/tweet_ID_2.jpg "https://pbs.twimg.com/media/yyy?format=jp
 
 文件扩展名跟随 URL 中的 `format` 参数（jpg/png/webp）。
 
-### 4. 汇报结果
+### 4. 汇报结果与 Obsidian 归档
 
-下载完成后，用 `ls -lh` 列出已下载的文件：文件名、大小、路径。
+下载完成后：
+1. 用 `ls -lh` 列出已下载的文件。
+2. **Obsidian 归档 (可选)**: 若环境包含 Obsidian 库，建议在 `~/Obsidian/aitalk/` 生成一个归档笔记：
+   - 文件名：`{时间戳}--X下载-{uploader}__xdown.md`
+   - YAML Frontmatter:
+     ```yaml
+     ---
+     title: "X 下载：{uploader}"
+     date: {{YYYY-MM-DD HH:mm}}
+     tags:
+       - x-media
+       - download
+     skill: ljg-x-download
+     source: {URL}
+     ---
+     ```
+   - 内容：包含原贴链接、下载路径、以及（如果是图片）使用 `![[图片文件名]]` 的预览。
 
 ## 故障排除
+...
 
 ### 需要登录
 

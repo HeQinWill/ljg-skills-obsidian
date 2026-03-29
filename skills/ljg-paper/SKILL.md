@@ -165,9 +165,32 @@ version: "4.3.0"
 
 列修改清单确认后生成文件。
 
-### 9. 生成 Org 文件
+### 9. 写入
 
-按 Denote 规范获取时间戳，读 `references/template.org`，写入 `~/Documents/notes/`。
+为了更好的知识图谱关联，指定 Obsidian 输出，并遵循此规范：
+
+1. **获取时间戳**：`date +%Y%m%d%a%H%M`
+2. **生成 YAML 属性 (Frontmatter)**:
+   ```yaml
+   ---
+   title: "paper-{简短标题}"
+   date: {{YYYY-MM-DD HH:mm}}
+   tags:
+     - {领域标签}
+   aliases:
+     - "{论文原标题}"
+   skill: ljg-paper
+   authors: {作者列表}
+   venue: {发表场所/年份}
+   source: {URL}
+   ---
+   ```
+3. **写入路径**：`~/Obsidian/aitalk/{时间戳}--paper-{简短标题}__paper.md`
+4. **Markdown 格式与双向链接**:
+   - 使用标准 Markdown 语法（`**bold**`, `## Heading`）。
+   - 对论文中的 **核心概念**、**关键算法**、**引用到的重要论文** 使用 `[[维基链接]]`。
+   - 使用 `> [!info] 洞见` 和 `> [!check] 博导判决` Callouts。
+5. **向用户报告文件路径**
 
 ## 验收
 

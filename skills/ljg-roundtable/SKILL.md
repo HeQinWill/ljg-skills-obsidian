@@ -93,23 +93,43 @@ Assistant: [Launches roundtable discussion on free will]
 
 ### 输出
 
-   调用`obsidian-markdown`和`obsidian-cli`和`obsidian-bases`和`json-canvas`技能，严格遵循 Obsidian 规范。
+   调用`obsidian-markdown`、`obsidian-cli`、`obsidian-bases` 和 `json-canvas` 技能，严格遵循以下规范：
 
-   1. 运行 `date +%Y%m%d%a%H%M` 获取时间戳
-   2. 写入 `~/Obsidian/aitalk/{时间戳}--圆桌讨论{议题关键词}__roundtable.md`
-   3. 将讨论全貌整合为 Markdown 文件，包括：
+   1. **运行 `date +%Y%m%d%a%H%M` 获取时间戳**
+   2. **生成 YAML 属性 (Frontmatter)**:
+      在文档开头包含以下属性，确保 Obsidian 能够正确解析属性视图：
+      ```yaml
+      ---
+      title: "圆桌讨论：{议题关键词}"
+      created: {{TIMESTAMP}}
+      updated: {{TIMESTAMP}}
+      tags:
+        - {议题标签}
+      aliases:
+        - "Roundtable: {议题关键词}"
+      skill: ljg-roundtable
+      status: completed
+      ---
       ```
-      ## 议题与参会者
-      ## 各轮讨论记录
-      ### 第 N 轮：{引导问题}
-      #### 发言记录
-      #### 核心争议
-      #### ASCII 框架图
-      ## 知识网络（全局）
-      在讨论结束时，提供一个符合 [[json-canvas]] 逻辑的节点布局建议 and/or 包含一个 `mermaid` 流程图展示立场间的张力。
-      ## 开放问题
-      ```
-   4. 向用户报告文件路径
+   3. **写入文件**:
+      路径：`~/Obsidian/aitalk/{时间戳}--圆桌讨论{议题关键词}__roundtable.md`
+   4. **整合内容与双向链接**:
+      - **核心概念**: 对讨论中提到的核心概念、人物名使用 `[[维基链接]]`。
+      - **双向引用**: 如果讨论涉及库中已有的笔记，直接使用 `[[笔记名称]]` 建立链接。
+      - **结构化显示**:
+        - 使用 `#` 一级标题作为文件名对应的标题。
+        - 使用 `> [!abstract] 议题` 展示背景。
+        - 使用 `## 参会者` 列出人物，并链接到对应的人物笔记（如 `[[人物名]]`）。
+        - 每轮讨论使用 `### 第 N 轮`。
+   5. **知识网络可视化**:
+      - 结尾提供一个符合 [[json-canvas]] 逻辑的节点布局建议。
+      - 包含一个 `mermaid` 流程图展示立场间的张力：
+        ```mermaid
+        graph TD
+          A[[人物A]] -- 反驳 --> B[[人物B]]
+          C[[人物C]] -- 补充 --> A
+        ```
+   6. **向用户报告文件路径**
 
 ### 主持人行为准则
 

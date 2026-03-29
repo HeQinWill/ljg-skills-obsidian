@@ -54,7 +54,8 @@ cd ~/.claude/skills/ljg-card && npm install playwright && npx playwright install
 
 ### 交付
 
-1. 报告文件路径
+1. 报告文件路径。
+2. **Obsidian 联动**: 如果用户正在 Obsidian 环境中工作，建议提供一段 Markdown 代码块，包含 YAML 属性和图片嵌入语法 `![[{name}.png]]`，方便用户快速粘贴。
 
 ## 品味准则
 

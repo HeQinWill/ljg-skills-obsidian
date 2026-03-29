@@ -32,17 +32,29 @@ version: "5.0.0"
 - 文件名：`{时间戳}--plain-{简短标题}__plain.md`
 - 输出目录：`~/Obsidian/aitalk/`
 
-### Obsidian 属性信息
+### 输出
 
-```
-#+title:      plain-{简短标题}
-#+date:       [{YYYY-MM-DD Day HH:MM}]
-#+filetags:   :plain:atom:
-#+identifier: {YYYYMMDDTHHMMSS}
-#+source:     {URL 或来源描述}
-```
+调用`obsidian-markdown`、`obsidian-cli`、`obsidian-bases` 和 `json-canvas` 技能，严格遵循以下规范：
 
-文件写入后报告路径。
+1. **获取时间戳**：`date +%Y%m%d%a%H%M`
+2. **生成 YAML 属性 (Frontmatter)**:
+   ```yaml
+   ---
+   title: "plain-{简短标题}"
+   date: {{YYYY-MM-DD HH:mm}}
+   tags:
+     - {领域标签}
+   aliases:
+     - "{简短标题} (白话)"
+   skill: ljg-plain
+   source: {URL 或来源描述}
+   ---
+   ```
+3. **写入路径**：`~/Obsidian/aitalk/{时间戳}--plain-{简短标题}__plain.md`
+4. **双向链接**:
+   - 在正文中对核心名词和类比概念使用 `[[维基链接]]`。
+   - 引用来源时，如果是库内笔记，使用 `[[笔记名称]]`。
+5. **向用户报告文件路径**
 
 ## 红线（每条必须过，顺序即优先级）
 

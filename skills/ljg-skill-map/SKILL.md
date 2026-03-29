@@ -64,4 +64,8 @@ version: "1.0.0"
 
 ### 4. 输出
 
-直接在对话中渲染 ASCII 地图。不生成文件，不写入磁盘。
+1. **对话渲染**: 直接在对话中渲染 ASCII 地图。
+2. **Obsidian 归档**: 在 `~/Obsidian/aitalk/000-技能地图__skillmap.md` 生成一份持久化的技能清单。
+   - 使用 YAML Frontmatter 标记类型和更新时间。
+   - 使用 Obsidian 表格展示，技能名链接至其说明（如 `[[ljg-plain]]`）。
+   - 为不同类别的技能打上不同的标签（如 `#skill/atom`, `#skill/caster`）。

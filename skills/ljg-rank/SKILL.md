@@ -38,20 +38,41 @@ user_invocable: true
 
 ## 输出
 
-调用`obsidian-markdown`和`obsidian-cli`和`obsidian-bases`和`json-canvas`技能，严格遵循 Obsidian 规范。
+调用`obsidian-markdown`、`obsidian-cli`、`obsidian-bases` 和 `json-canvas` 技能，严格遵循以下规范：
 
-### 1. 秩的呈现 (Callouts)
-- **生成器列表**：
+### 1. 存储规范
+1. **获取时间戳**：`date +%Y%m%d%a%H%M`
+2. **生成 YAML 属性 (Frontmatter)**:
+   ```yaml
+   ---
+   title: "{领域}的秩"
+   created: {{TIMESTAMP}}
+   updated: {{TIMESTAMP}}
+   tags:
+     - {领域标签}
+   aliases:
+     - "Rank: {领域}"
+   skill: ljg-rank
+   ---
+   ```
+3. **写入路径**：`~/Obsidian/aitalk/{时间戳}--{领域}的秩__rank.md`
+4. **向用户报告文件路径**
+
+### 2. 结构化呈现与双向链接
+- **标题**: 使用 `# {领域}的秩`。
+- **维基链接**: 对文中提到的核心概念、公理、生成器名称使用 `[[维基链接]]`，便于在 Obsidian 中形成知识图谱。
+- **秩的呈现 (Callouts)**：
   > [!success] 秩 (The Generators)
-  > 1. {生成器A}
-  > 2. {生成器B}
+  > 1. [[生成器A]]
+  > 2. [[生成器B]]
 
 - **生成性验证**：使用 `mermaid` 语法绘制从生成器到复杂现象的推导路径。
+  ```mermaid
+  graph LR
+    G1[[生成器A]] --> P1(现象1)
+    G1 --> P2(现象2)
+    G2[[生成器B]] --> P2
+  ```
 
-### 2. 写作风格
+### 3. 写作风格
 保持散文风格，从混沌到极简。使用 `---` 分隔逻辑段落。
-
-### 3. 存储规范
-1. 获取时间戳：`date +%Y%m%d%a%H%M`
-2. 写入 `~/Obsidian/aitalk/{时间戳}--{领域}的秩__rank.md`
-3. 报告文件路径给用户

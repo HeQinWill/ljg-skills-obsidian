@@ -44,19 +44,18 @@ version: "1.0.1"
 
 多个单词时，每个单词启动一个 Agent subagent 并行处理（每个 subagent 内部 A→B 串行）。
 
-### 4. 汇总报告
+### 4. 汇总报告 (Obsidian 优化)
 
 ```
 ════ 词卡完成 ═══════════════════════
-📖 {Word1}
-   🖼️ ~/Downloads/{Word1}.png
-
-📖 {Word2}
-   🖼️ ~/Downloads/{Word2}.png
-...
+📖 {Word}
+   📝 解析: {md/org 文件路径}
+   🖼️ 词卡: {PNG 文件路径}
+   🔗 Obsidian: 在解析笔记中已嵌入 `![[{PNG文件名}]]`
 ```
 
 ## 关键约束
+...
 
 - 先解词后铸卡，顺序不可逆
 - ljg-word 和 ljg-card -i 各自的质量标准不变
