@@ -13,10 +13,14 @@ version: "5.0.0"
 
 ## 格式约束
 
-### Org-mode 语法
+调用`obsidian-markdown`和`obsidian-cli`和`obsidian-bases`和`json-canvas`技能，严格遵循 Obsidian 规范。
+
+- **禁止子标题**：保持正文流线性。
+- **类比视觉化**：使用 `> [!tip] 类比`。
+- **结构骨架**：将空间/逻辑关系放入 `> [!example] 结构骨架` (ASCII 代码块)。
 
 - 加粗用 `*bold*`（单星号），禁止 `**bold**`
-- 标题层级从 `*` 开始，不跳级
+- 标题层级从 `#` 开始，不跳级
 
 ### ASCII Art
 
@@ -24,12 +28,11 @@ version: "5.0.0"
 
 ### Denote 文件规范
 
-- 时间戳：`date +%Y%m%dT%H%M%S`
-- 可读时间：`date "+%Y-%m-%d %a %H:%M"`
-- 文件名：`{时间戳}--plain-{简短标题}__plain.org`
-- 输出目录：`~/Documents/notes/`
+- 时间戳：`date +%Y%m%d%a%H%M`
+- 文件名：`{时间戳}--plain-{简短标题}__plain.md`
+- 输出目录：`~/Obsidian/aitalk/`
 
-### Org 文件头
+### Obsidian 属性信息
 
 ```
 #+title:      plain-{简短标题}
@@ -63,7 +66,7 @@ version: "5.0.0"
 - *画面* — 闭眼能看到的场景。硬造的画面比没有更糟
 - *故事* — 一个具体的人遇到一个具体的问题。读者跟着走
 - *反问入链* — 遇到隐含前提，用问题打开，然后回答它
-- *骨架图* — 概念涉及空间关系时，嵌入 ASCII 图（`#+begin_example` 块）
+- *骨架图* — 概念涉及空间关系时，嵌入 ASCII 图
 
 ## 执行
 
@@ -95,7 +98,7 @@ URL → WebFetch | 文本 → 直接用 | 文件路径 → Read | 概念 → 直
 
 ### 4. 生成 Org 文件
 
-按 Denote 规范获取时间戳，写出文件头 + 正文，存入 `~/Documents/notes/`。
+按 Denote 规范获取时间戳，写出文件头 + 正文，存入 `~/Obsidian/aitalk/`。
 
 ## 验收
 

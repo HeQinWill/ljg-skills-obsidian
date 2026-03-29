@@ -93,7 +93,7 @@ Assistant: [Launches roundtable discussion on free will]
 
 ### 输出
 
-   严格遵循 [[obsidian-markdown]] 规范。
+   调用`obsidian-markdown`和`obsidian-cli`和`obsidian-bases`和`json-canvas`技能，严格遵循 Obsidian 规范。
 
    1. 运行 `date +%Y%m%d%a%H%M` 获取时间戳
    2. 写入 `~/Obsidian/aitalk/{时间戳}--圆桌讨论{议题关键词}__roundtable.md`

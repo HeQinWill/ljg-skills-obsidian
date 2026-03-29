@@ -38,7 +38,7 @@ user_invocable: true
 
 ## 输出
 
-严格遵循 [[obsidian-markdown]] 规范。
+调用`obsidian-markdown`和`obsidian-cli`和`obsidian-bases`和`json-canvas`技能，严格遵循 Obsidian 规范。
 
 ### 1. 秩的呈现 (Callouts)
 - **生成器列表**：
