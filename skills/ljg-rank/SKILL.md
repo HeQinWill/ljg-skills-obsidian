@@ -38,6 +38,20 @@ user_invocable: true
 
 ## 输出
 
-1. 获取时间戳：`date +%Y%m%dT%H%M%S` 和 `date "+%Y-%m-%d %a %H:%M"`
-2. 写入 `~/Documents/notes/{时间戳}--{领域}的秩__rank.org`
+严格遵循 [[obsidian-markdown]] 规范。
+
+### 1. 秩的呈现 (Callouts)
+- **生成器列表**：
+  > [!success] 秩 (The Generators)
+  > 1. {生成器A}
+  > 2. {生成器B}
+
+- **生成性验证**：使用 `mermaid` 语法绘制从生成器到复杂现象的推导路径。
+
+### 2. 写作风格
+保持散文风格，从混沌到极简。使用 `---` 分隔逻辑段落。
+
+### 3. 存储规范
+1. 获取时间戳：`date +%Y%m%d%a%H%M`
+2. 写入 `~/Obsidian/aitalk/{时间戳}--{领域}的秩__rank.md`
 3. 报告文件路径给用户

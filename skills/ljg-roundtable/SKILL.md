@@ -24,7 +24,7 @@ Assistant: [Launches roundtable discussion on free will]
 为了执行本项技能，请严格按照以下步骤操作：
 
 1. **读取参考资料**
-   读取 `~/.claude/skills/ljg-roundtable/references/original-prompt.org` 了解原始框架设计意图。
+   读取 `../ljg-roundtable/references/original-prompt.org` 了解原始框架设计意图。
 
 2. **解析议题**
    从用户输入中提取核心议题。如果用户只说"圆桌讨论"未给议题，询问议题。
@@ -91,23 +91,23 @@ Assistant: [Launches roundtable discussion on free will]
    - 生成**完整知识网络** ASCII 图：标出所有关键概念、立场、争议点及其关系
    - 列出**未解决的开放问题**（讨论中暴露但未穷尽的方向）
 
-7. **写入 org 文件**
-   将讨论全貌整合为 org-mode 格式并写入文件：
-   1. 运行 `date +%Y%m%dT%H%M%S` 获取时间戳
-   2. 写入 `~/Documents/notes/{timestamp}--圆桌-{议题关键词}__roundtable.org`
-   3. org 文件结构：
-      ```org
-      #+title: 圆桌：{议题}
-      #+date: [{日期}]
-      #+filetags: :roundtable:
-      * 议题与参会者
-      * 各轮讨论记录
-      ** 第 N 轮：{引导问题}
-      *** 发言记录
-      *** 核心争议
-      *** ASCII 框架图
-      * 知识网络（全局）
-      * 开放问题
+### 输出
+
+   严格遵循 [[obsidian-markdown]] 规范。
+
+   1. 运行 `date +%Y%m%d%a%H%M` 获取时间戳
+   2. 写入 `~/Obsidian/aitalk/{时间戳}--圆桌讨论{议题关键词}__roundtable.md`
+   3. 将讨论全貌整合为 Markdown 文件，包括：
+      ```
+      ## 议题与参会者
+      ## 各轮讨论记录
+      ### 第 N 轮：{引导问题}
+      #### 发言记录
+      #### 核心争议
+      #### ASCII 框架图
+      ## 知识网络（全局）
+      在讨论结束时，提供一个符合 [[json-canvas]] 逻辑的节点布局建议 and/or 包含一个 `mermaid` 流程图展示立场间的张力。
+      ## 开放问题
       ```
    4. 向用户报告文件路径
 
