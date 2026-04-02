@@ -13,7 +13,7 @@ version: "5.0.0"
 
 ## 格式约束
 
-调用`obsidian-markdown`和`obsidian-cli`和`obsidian-bases`和`json-canvas`技能，严格遵循 Obsidian 规范。
+请加载调用 `obsidian-markdown` 和 `obsidian-cli` 和 `obsidian-bases` 和 `json-canvas` 技能，严格遵循 Obsidian 规范。
 
 - **禁止子标题**：保持正文流线性。
 - **类比视觉化**：使用 `> [!tip] 类比`。
@@ -108,7 +108,7 @@ URL → WebFetch | 文本 → 直接用 | 文件路径 → Read | 概念 → 直
 
 扫完列修改清单（哪句触发什么，改前→改后）。清单不写入文件。
 
-### 4. 生成 Org 文件
+### 4. 生成markdown文件
 
 按 Denote 规范获取时间戳，写出文件头 + 正文，存入 `~/Obsidian/aitalk/`。
 
