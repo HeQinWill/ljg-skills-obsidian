@@ -2,7 +2,7 @@
 name: ljg-paper
 description: "Paper reader for non-academics. Takes a paper and extracts its ideas for personal use. Focuses on understanding, not academic critique. Use when user shares an arxiv link, paper URL, PDF, or asks to analyze a research paper. Trigger words: '读论文', '分析论文', 'paper', or when user shares an academic paper."
 user_invocable: true
-version: "4.3.0"
+version: "4.4.0"
 ---
 
 # ljg-paper: 读论文
@@ -87,6 +87,14 @@ version: "4.3.0"
 - 论文名称 → WebSearch
 
 确保拿到：标题、作者、摘要、核心方法、结果。
+
+如果论文有一张承载全文核心思路的总览图（overview / architecture diagram，通常是 Figure 1），提取并保存到 `~/Documents/notes/images/`，文件名 `{identifier}--paper-{简短标题}-overview.png`。
+
+判断标准：这张图让人一看就抓住论文在做什么。不是所有论文都有——没有就跳过，不要硬找。
+
+提取方法：
+- arxiv → 访问 HTML 版（`arxiv.org/html/...`），找到图片 URL，WebFetch 下载
+- PDF → 截取含图页面保存为图片
 
 ### 2. 定位：它在解决什么？
 

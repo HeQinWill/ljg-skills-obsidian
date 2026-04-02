@@ -96,7 +96,7 @@ Read `~/.claude/skills/ljg-card/assets/poster_template.html`
 | `{{HEADER_BLOCK}}` | 续页卡：`<div class="header"><span class="running-title">文章标题</span></div>`；首卡或单卡：空字符串 |
 | `{{TITLE_BLOCK}}` | 首卡有标题时：`<div class="title-area"><h1>标题</h1></div>`；续页卡或无标题时：空字符串 |
 | `{{BODY_HTML}}` | 步骤 5 生成的 HTML |
-| `{{SOURCE}}` | 来源/作者信息（用户提供则填入，否则 `李继刚`） |
+| `{{SOURCE_LINE}}` | 内容来源（可选）：`<span class="info-source">来源文字</span>`，无来源时空字符串 |
 | `{{PAGE_INFO}}` | 多卡时 `1 / 3`，单卡时空字符串 |
 
 **结尾标记**：仅在最后一张卡的 `{{BODY_HTML}}` 末尾追加 `<p style="text-align:right;font-size:16px;color:#ACACB0;margin-top:40px;">∎</p>`。非末页不加。

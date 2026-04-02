@@ -77,8 +77,7 @@ Read `~/.claude/skills/ljg-card/assets/long_template.html`
 | `{{ACCENT_COLOR}}` | 步骤 2.5 确定的强调色 |
 | `{{TITLE_BLOCK}}` | 有标题时：`<div class="title-area"><h1>标题</h1></div>`；无标题时：空字符串 |
 | `{{BODY_HTML}}` | 步骤 3 生成的全部 HTML |
-| `{{SOURCE}}` | 来源/作者信息（用户提供则填入，否则 `李继刚`） |
-| `{{ARXIV_LINE}}` | 内容来自 arxiv 论文时：`<span class="arxiv">arxiv: XXXX.XXXXX</span>`；否则空字符串 |
+| `{{SOURCE_LINE}}` | 内容来源（可选）：`<span class="info-source">来源文字</span>`，无来源时空字符串 |
 
 写入：`/tmp/ljg_cast_long_{name}.html`
 

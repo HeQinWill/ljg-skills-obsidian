@@ -374,8 +374,7 @@ Read `~/.claude/skills/ljg-card/assets/whiteboard_template.html`
 |------|------|
 | `{{CUSTOM_CSS}}` | 全部自定义 CSS |
 | `{{CONTENT_HTML}}` | 全部内容 HTML |
-| `{{SOURCE}}` | 署名 |
-| `{{ARXIV_LINE}}` | arxiv 时填入，否则空 |
+| `{{SOURCE_LINE}}` | 内容来源（可选）：`<span class="info-source">来源文字</span>`，无来源时空字符串 |
 
 写入：`/tmp/ljg_cast_whiteboard_{name}.html`
 

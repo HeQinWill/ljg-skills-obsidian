@@ -25,7 +25,7 @@ Read `~/.claude/skills/ljg-card/assets/infograph_template.html`
 
 - **标题**：≤ 15 字
 - **副标题**：一句话核心 ≤ 30 字
-- **来源**：用户提供则用，否则 `李继刚`
+- **来源**：内容的原始出处（作者、网站等），用于 footer 右侧（可选）
 - **REF 编码**：`REF—{领域} / {主题}`（写在画面上的位置由你决定）
 
 ### 2.2 三个维度
@@ -268,8 +268,7 @@ Read `~/.claude/skills/ljg-card/assets/infograph_template.html`
 |------|------|
 | `{{CUSTOM_CSS}}` | 这张图的全部 CSS |
 | `{{CONTENT_HTML}}` | 这张图的全部 HTML |
-| `{{SOURCE}}` | 署名 |
-| `{{ARXIV_LINE}}` | arxiv 时 `<span class="arxiv">arxiv: XXXX.XXXXX</span>`，否则空 |
+| `{{SOURCE_LINE}}` | 内容来源（可选）：`<span class="info-source">来源文字</span>`，无来源时空字符串 |
 
 写入：`/tmp/ljg_cast_infograph_{name}.html`
 

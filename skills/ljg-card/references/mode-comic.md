@@ -318,8 +318,7 @@ Read `~/.claude/skills/ljg-card/assets/comic_template.html`
 |------|------|
 | `{{CUSTOM_CSS}}` | 全部 CSS（包括 :root 覆盖） |
 | `{{CONTENT_HTML}}` | 全部 HTML |
-| `{{SOURCE}}` | 署名 |
-| `{{ARXIV_LINE}}` | arxiv 时填入，否则空 |
+| `{{SOURCE_LINE}}` | 内容来源（可选）：`<span class="info-source">来源文字</span>`，无来源时空字符串 |
 
 写入：`/tmp/ljg_cast_comic_{name}.html`
 

@@ -48,9 +48,10 @@ node ~/.claude/skills/ljg-card/assets/capture.js <html> <png> <width> <height> [
 cd ~/.claude/skills/ljg-card && npm install playwright && npx playwright install chromium
 ```
 
-### arxiv 检测
+### Footer
 
-内容来源为 arxiv 论文时（URL 含 `arxiv.org`、文件名含 `paper` 标签、或内容中出现 arxiv ID），提取 arxiv ID（格式 `XXXX.XXXXX`），在卡片 footer 右侧显示。适用于 `-l` 和 `-i` 模具（`-m` 多卡无 footer，不适用）。
+- 左侧：logo + 李继刚（已硬编码在模板中）
+- 右侧：内容来源（可选）——有明确来源时显示（如作者名、arxiv ID、网站名等），无来源时留空。使用 `{{SOURCE_LINE}}` 变量：有来源时填 `<span class="info-source">来源文字</span>`，否则空字符串。适用于 `-l`、`-i`、`-v`、`-c`、`-w` 模具（`-m` 多卡无 footer，不适用）。
 
 ### 交付
 
